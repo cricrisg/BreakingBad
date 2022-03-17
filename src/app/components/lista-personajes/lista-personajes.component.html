@@ -1,0 +1,40 @@
+<header class="bg-dark row d-flex justify-content-around py-3">
+
+  <div class="col-3">
+    <a class="text-white navbar-brand" [routerLink]="['/listapersonajes']">Breaking bad</a>
+  </div>
+  
+  <div class="col-3 d-flex justify-content-center ">
+    <input type="text" class="form-control me-3" placeholder="Introduce un nombre" [(ngModel)]="name">
+    <button class="btn btn-warning col-3" (click)="searchName(name)">Buscar</button>
+  </div>
+
+  <div class="col-3">
+    <select name="categoty" id="category" class="form-select" (change)="getCategory($event)">
+    <option value="" selected>Selecciona una categoría</option>
+    <option [value]="category" *ngFor="let category of arrCategorias">{{category}}</option>
+  </select>
+  </div>
+
+</header>
+
+<main class="container mt-5">
+
+  <section class="row g-4">
+    <article *ngFor="let personaje of arrPersonajes" class="col-12 col-md-4">
+      <app-thumb-personaje [miPersonaje]="personaje"></app-thumb-personaje>
+    </article>
+  </section>
+
+  <nav>
+    <ul class="pagination pagination-sm">
+      <li class="page-item" *ngFor="let pagina of arrPaginas, let i=index" routerLinkActive="active" [routerLink]="['/listapersonajes', i+1]">
+        <span class="page-link">{{i+1}}</span>
+      </li>
+    </ul>
+  </nav>
+
+  
+  
+</main>
+

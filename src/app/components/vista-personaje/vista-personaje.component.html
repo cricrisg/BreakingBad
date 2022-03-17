@@ -1,0 +1,21 @@
+<section class="container mt-5">
+  <div class="row">
+    <figure class="col-12 col-md-3">
+      <img src={{personaje?.img}} alt={{personaje?.nickname}} class="img-fluid"> 
+    </figure>
+
+    <div class="col-12 col-md-9">
+    <h2>{{personaje?.name}}</h2>
+    <ul class="list-group">
+      <li class="list-group-item">{{personaje?.occupation}}</li>
+      <li class="list-group-item">{{personaje?.birthday}}</li>
+      <li class="list-group-item">{{personaje?.portrayed}}</li>
+      <li class="list-group-item">{{personaje?.status}}</li>
+    </ul>
+
+    <button class="btn btn-warning mt-3" [routerLink]="['/listapersonajes']">Volver al listado</button>
+    </div>
+    
+  </div>
+
+</section>

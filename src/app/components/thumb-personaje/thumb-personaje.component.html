@@ -1,0 +1,17 @@
+<div class="card mb-3 p-2 shadow">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src={{personaje?.img}} class="img-fluid rounded-start" [alt]="personaje?.nickname">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{personaje?.name}}</h5>
+        <ul>
+          <li>Ocupación: {{personaje?.occupation}}</li>
+          <li>Fecha de nacimiento: {{personaje?.birthday}}</li>
+        </ul>
+        <a class="btn btn-warning" [routerLink]="['/vista', personaje?.char_id]">Ver detalle</a>
+      </div>
+    </div>
+  </div>
+</div>
